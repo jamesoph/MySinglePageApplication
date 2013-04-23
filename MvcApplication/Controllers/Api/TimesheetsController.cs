@@ -18,7 +18,7 @@ namespace MvcApplication.Controllers.Api
 
         public TimesheetsController()
         {
-            var connectionString = ConfigurationManager.AppSettings["MongoDBTimesheets"];
+            var connectionString = ConfigurationManager.AppSettings["MONGOHQ_URL"];
             _mongoDb = MongoDatabase.Create(connectionString);
 
             _repository = _mongoDb.GetCollection<Timesheet>(typeof (Timesheet).Name);
